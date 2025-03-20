@@ -1,0 +1,95 @@
+.about-page {
+    padding: 100px 2rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.about-section,
+.education-section,
+.languages-section {
+    margin-bottom: 4rem;
+}
+
+.about-section h2,
+.education-section h2,
+.languages-section h2 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+}
+
+.about-content {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.about-content p {
+    color: #666;
+    line-height: 1.8;
+    font-size: 1.1rem;
+}
+
+.education-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1.5rem;
+}
+
+.education-card h3 {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+}
+
+.education-card .institution {
+    color: #666;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.education-card .period,
+.education-card .location {
+    color: #888;
+    font-size: 0.9rem;
+}
+
+.languages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+}
+
+.language-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.language-card:hover {
+    transform: translateY(-5px);
+}
+
+.language-card h3 {
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+}
+
+.language-card p {
+    color: #666;
+}
+
+@media (max-width: 768px) {
+    .about-page {
+        padding: 80px 1rem 1rem;
+    }
+    .languages-grid {
+        grid-template-columns: 1fr;
+    }
+}
