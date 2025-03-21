@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Contact;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Cache;
 
 class ContactController extends Controller
 {
@@ -15,6 +16,10 @@ class ContactController extends Controller
             'email' => 'required|email|max:255',
             'message' => 'required|string'
         ]);
+
+        // Cache the contact data for 1 hour
+        $cacheKey = 'contact_' . time();
+        Cache::put($cacheKey, $request->all(), 3600);
 
         $contact = Contact::create([
             'name' => $request->name,
