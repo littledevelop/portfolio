@@ -1,11 +1,8 @@
 services:
   - type: web
     name: portfolio-backend
-    runtime: php
-    buildCommand: composer install
-    startCommand: php artisan serve --host=0.0.0.0 --port=$PORT
+    env: docker
     rootDirectory: backend
-    phpVersion: 8.1
     envVars:
       - key: APP_NAME
         value: Portfolio
