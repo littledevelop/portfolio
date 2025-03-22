@@ -2,15 +2,17 @@ services:
   - type: web
     name: portfolio-backend
     runtime: php
-    buildCommand: cd backend && composer install && php artisan migrate --force && php artisan key:generate --force
-    startCommand: cd backend && php artisan serve --host=0.0.0.0 --port=$PORT
+    buildCommand: composer install
+    startCommand: php artisan serve --host=0.0.0.0 --port=$PORT
+    rootDirectory: backend
+    phpVersion: 8.1
     envVars:
       - key: APP_NAME
         value: Portfolio
       - key: APP_ENV
         value: production
       - key: APP_DEBUG
-        value: false
+        value: true
       - key: DB_CONNECTION
         value: mysql
       - key: DB_HOST
@@ -22,4 +24,20 @@ services:
       - key: DB_USERNAME
         value: root
       - key: DB_PASSWORD
-        value: "" 
+        value: ""
+      - key: MAIL_MAILER
+        value: smtp
+      - key: MAIL_HOST
+        value: smtp.gmail.com
+      - key: MAIL_PORT
+        value: 587
+      - key: MAIL_USERNAME
+        value: your_gmail
+      - key: MAIL_PASSWORD
+        value: your_gmail_app_password
+      - key: MAIL_ENCRYPTION
+        value: tls
+      - key: MAIL_FROM_ADDRESS
+        value: your_gmail
+      - key: MAIL_FROM_NAME
+        value: Portfolio 

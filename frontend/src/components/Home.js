@@ -28,7 +28,7 @@ const Home = () => {
             <a href="https://www.linkedin.com/in/lata-chapadia-271036233/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="social-link">
               <FaLinkedin />
             </a>
-            <a href="https://twitter.com/yourusername" target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="social-link">
+            <a href="https://twitter.com/Ranalata" target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="social-link">
               <FaTwitter />
             </a>
           </div>
