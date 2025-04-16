@@ -22,7 +22,8 @@ const Contact = () => {
 
     try {
       // const response = await fetch('https://portfolio-cfdl.onrender.com/api/contacts', {
-        const response = await fetch('http://127.0.0.1:8000/api/contacts', {
+        // const response = await fetch('http://127.0.0.1:8000/api/contacts', {
+        const response = await fetch('http://latadev.whf.bz/api/contacts', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
