@@ -21,7 +21,7 @@ const Contact = () => {
     setStatus('sending');
 
     try {
-      const response = await axios.post('https://portfolio-gray-nine-54.vercel.app/api/contact', formData, {
+      const response = await axios.post('/api/contact', formData, {
         headers: {
           'Content-Type': 'application/json'
         }
