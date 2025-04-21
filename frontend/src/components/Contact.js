@@ -25,11 +25,21 @@ const Contact = () => {
       message: message,
     };
   
-    const response = await fetch('https://portfolio-git-main-littledevelops-projects.vercel.app/api/contact', {  // Full URL to the serverless function
-      method: 'POST',
-      body: JSON.stringify(formData),
+    try {
+      const response = await axios.post('/api/contact', formData, {
       headers: { 'Content-Type': 'application/json' },
-    });
+      });
+
+      if (response.status === 200) {
+      setStatus('success');
+      setFormData({ name: '', email: '', message: '' });
+      } else {
+      setStatus('error');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      setStatus('error');
+    }
   
     if (response.ok) {
       // Handle success
