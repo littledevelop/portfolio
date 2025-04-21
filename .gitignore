@@ -3,11 +3,10 @@ frontend/node_modules/
 frontend/build/
 frontend/.env
 
-# Backend
-backend/vendor/
-backend/node_modules/
-backend/.env
-backend/storage/*.key
+# server
+server/node_modules/
+server/.env
+
 
 # IDE
 .vscode/

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import '../common.css';
-
+import axios from 'axios';
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -22,12 +22,42 @@ const Contact = () => {
 
     try {
       // Send data to the serverless function
-      const response = await axios.post('/api/ContactAPI',formData)
-      setStatus('Form submitted successfully!');
+      const response = await axios.post('http://localhost:5000/api/contact',formData)
+      console.log(response.data);
+      if (response.status === 200) {
+        setStatus('success');
+        setFormData({ name: '', email: '', message: '' });
+      } else {
+        setStatus('error');
+      }
     } catch (error) {
       setStatus('Error submitting the form.');
     }
   };
+
+  //   try {
+  //     // const response = await fetch('https://portfolio-cfdl.onrender.com/api/contacts', {
+  //       // const response = await fetch('http://127.0.0.1:8000/api/contacts', {
+  //       const response = await fetch('https://latadev.whf.bz/api/contacts', {
+  //       method: 'POST',
+  //       headers: {
+  //         'Content-Type': 'application/json',
+  //         'Accept': 'application/json'
+  //       },
+  //       body: JSON.stringify(formData)
+  //     });
+
+  //     if (response.ok) {
+  //       setStatus('success');
+  //       setFormData({ name: '', email: '', message: '' });
+  //     } else {
+  //       setStatus('error');
+  //     }
+  //   } catch (error) {
+  //     console.error('Error:', error);
+  //     setStatus('error');
+  //   }
+  // };
 
   return (
     <section id="contact" className="contact-section">
