@@ -1,10 +1,6 @@
-import nodemailer from 'nodemailer';
+const nodemailer = require('nodemailer');
 
-export default async function handler(req, res) {
-  console.log('Request method:', req.method);
-  console.log('Request headers:', req.headers);
-  console.log('Request body:', req.body);
-
+module.exports = async (req, res) => {
   // Enable CORS
   res.setHeader('Access-Control-Allow-Credentials', true);
   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -21,7 +17,6 @@ export default async function handler(req, res) {
   }
 
   if (req.method !== 'POST') {
-    console.log('Method not allowed:', req.method);
     return res.status(405).json({ message: 'Method not allowed' });
   }
 
@@ -30,13 +25,11 @@ export default async function handler(req, res) {
 
     // Validate input
     if (!name || !email || !message) {
-      console.log('Missing required fields');
       return res.status(400).json({ message: 'All fields are required' });
     }
 
     // Email validation
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      console.log('Invalid email format');
       return res.status(400).json({ message: 'Invalid email format' });
     }
 
@@ -63,11 +56,10 @@ export default async function handler(req, res) {
 
     // Send email
     await transporter.sendMail(mailOptions);
-    console.log('Email sent successfully');
 
     return res.status(200).json({ message: 'Message sent successfully' });
   } catch (error) {
     console.error('Error:', error);
     return res.status(500).json({ message: 'Internal server error' });
   }
-}
+}; 

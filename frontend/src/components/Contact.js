@@ -21,7 +21,7 @@ const Contact = () => {
     setStatus('sending');
 
     try {
-      const response = await axios.post('https://portfolio-git-main-littledevelops-projects.vercel.app/api/contact', formData, {
+      const response = await axios.post('/api/contact', formData, {
         headers: {
           'Content-Type': 'application/json',
           'Accept': 'application/json'
@@ -35,7 +35,7 @@ const Contact = () => {
         setStatus('error');
       }
     } catch (error) {
-      console.error('Error:', error);
+      console.error('Error:', error.response || error);
       setStatus('error');
     }
   };
