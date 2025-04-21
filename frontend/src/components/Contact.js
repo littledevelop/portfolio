@@ -39,49 +39,6 @@ const Contact = () => {
     }
   };
 
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
-  //   setStatus('sending');
-
-  //   try {
-  //     // Send data to the serverless function
-  //     const response = await axios.post('/api/contact',formData)
-  //     console.log(response.data);
-  //     if (response.status === 200) {
-  //       setStatus('success');
-  //       setFormData({ name: '', email: '', message: '' });
-  //     } else {
-  //       setStatus('error');
-  //     }
-  //   } catch (error) {
-  //     setStatus('Error submitting the form.');
-  //   }
-  // };
-
-  //   try {
-  //     // const response = await fetch('https://portfolio-cfdl.onrender.com/api/contacts', {
-  //       // const response = await fetch('http://127.0.0.1:8000/api/contacts', {
-  //       const response = await fetch('https://latadev.whf.bz/api/contacts', {
-  //       method: 'POST',
-  //       headers: {
-  //         'Content-Type': 'application/json',
-  //         'Accept': 'application/json'
-  //       },
-  //       body: JSON.stringify(formData)
-  //     });
-
-  //     if (response.ok) {
-  //       setStatus('success');
-  //       setFormData({ name: '', email: '', message: '' });
-  //     } else {
-  //       setStatus('error');
-  //     }
-  //   } catch (error) {
-  //     console.error('Error:', error);
-  //     setStatus('error');
-  //   }
-  // };
-
   return (
     <section id="contact" className="contact-section">
       <div className="contact-page">
