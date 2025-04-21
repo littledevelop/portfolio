@@ -25,7 +25,7 @@ const Contact = () => {
       message: message,
     };
   
-    const response = await fetch('/api/contact', {  // Vercel will handle this as a serverless function
+    const response = await fetch('https://portfolio-git-main-littledevelops-projects.vercel.app/api/contact', {  // Full URL to the serverless function
       method: 'POST',
       body: JSON.stringify(formData),
       headers: { 'Content-Type': 'application/json' },
