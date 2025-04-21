@@ -22,7 +22,7 @@ const Contact = () => {
 
     try {
       // Send data to the serverless function
-      const response = await axios.post('http://localhost:5000/api/contact',formData)
+      const response = await axios.post('/api/contact',formData)
       console.log(response.data);
       if (response.status === 200) {
         setStatus('success');
