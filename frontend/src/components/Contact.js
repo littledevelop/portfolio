@@ -18,22 +18,46 @@ const Contact = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setStatus('sending');
-
-    try {
-      // Send data to the serverless function
-      const response = await axios.post('/api/contact',formData)
-      console.log(response.data);
-      if (response.status === 200) {
-        setStatus('success');
-        setFormData({ name: '', email: '', message: '' });
-      } else {
-        setStatus('error');
-      }
-    } catch (error) {
-      setStatus('Error submitting the form.');
+  
+    const formData = {
+      name: name,
+      email: email,
+      message: message,
+    };
+  
+    const response = await fetch('/api/contact', {  // Vercel will handle this as a serverless function
+      method: 'POST',
+      body: JSON.stringify(formData),
+      headers: { 'Content-Type': 'application/json' },
+    });
+  
+    if (response.ok) {
+      // Handle success
+      alert('Form submitted successfully');
+    } else {
+      // Handle error
+      alert('Form submission failed');
     }
   };
+
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   setStatus('sending');
+
+  //   try {
+  //     // Send data to the serverless function
+  //     const response = await axios.post('/api/contact',formData)
+  //     console.log(response.data);
+  //     if (response.status === 200) {
+  //       setStatus('success');
+  //       setFormData({ name: '', email: '', message: '' });
+  //     } else {
+  //       setStatus('error');
+  //     }
+  //   } catch (error) {
+  //     setStatus('Error submitting the form.');
+  //   }
+  // };
 
   //   try {
   //     // const response = await fetch('https://portfolio-cfdl.onrender.com/api/contacts', {
