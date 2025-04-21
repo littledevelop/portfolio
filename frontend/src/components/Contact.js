@@ -18,35 +18,24 @@ const Contact = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-  
-    const formData = {
-      name: name,
-      email: email,
-      message: message,
-    };
-  
+    setStatus('sending');
+
     try {
-      const response = await axios.post('https://portfolio-git-main-littledevelops-projects.vercel.app/api/contact', formData, {
-      headers: { 'Content-Type': 'application/json' },
+      const response = await axios.post('https://portfolio-gray-nine-54.vercel.app/api/contact', formData, {
+        headers: {
+          'Content-Type': 'application/json'
+        }
       });
 
       if (response.status === 200) {
-      setStatus('success');
-      setFormData({ name: '', email: '', message: '' });
+        setStatus('success');
+        setFormData({ name: '', email: '', message: '' });
       } else {
-      setStatus('error');
+        setStatus('error');
       }
     } catch (error) {
       console.error('Error:', error);
       setStatus('error');
-    }
-  
-    if (response.ok) {
-      // Handle success
-      alert('Form submitted successfully');
-    } else {
-      // Handle error
-      alert('Form submission failed');
     }
   };
 
