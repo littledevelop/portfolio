@@ -1,30 +1,25 @@
 {
     "version": 2,
     "builds": [{
-            "src": "package.json",
+            "src": "frontend/package.json",
             "use": "@vercel/static-build",
             "config": {
                 "distDir": "build"
             }
         },
         {
-            "src": "api/**/*.js",
+            "src": "api/contact.js",
             "use": "@vercel/node"
         }
     ],
     "routes": [{
-            "src": "/api/(.*)",
-            "dest": "/api/$1",
-            "methods": ["GET", "POST", "OPTIONS"],
-            "headers": {
-                "Access-Control-Allow-Origin": "*",
-                "Access-Control-Allow-Methods": "GET,OPTIONS,PATCH,DELETE,POST,PUT",
-                "Access-Control-Allow-Headers": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version"
-            }
+            "src": "/api/contact",
+            "dest": "/api/contact.js",
+            "methods": ["GET", "POST", "OPTIONS"]
         },
         {
             "src": "/(.*)",
-            "dest": "/build/$1"
+            "dest": "/frontend/build/$1"
         }
     ]
 }
