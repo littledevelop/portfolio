@@ -1,24 +1,8 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import "../common.css";
-import {
-  FaGithub,
-  FaLinkedin,
-  FaTwitter,
-  FaHtml5,
-  FaCss3Alt,
-  FaReact,
-  FaNodeJs,
-  FaDatabase,
-  FaDocker,
-} from "react-icons/fa";
-import {
-  SiJavascript,
-  SiPhp,
-  SiLaravel,
-  SiMysql,
-  SiMongodb,
-} from "react-icons/si";
+import {FaGithub,FaLinkedin,FaTwitter,FaHtml5,FaCss3Alt,FaReact,FaNodeJs,FaDatabase,FaDocker} from "react-icons/fa";
+import {SiJavascript,SiPhp,SiLaravel,SiMysql,SiMongodb} from "react-icons/si";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -39,22 +23,24 @@ const Home = () => {
             using React, PHP, Laravel, MySQL, and more. I specialize in creating
             custom websites, dashboards, service marketplaces, and business
             applications that are both visually appealing and
-            performance-driven. Here’s what I can help you with:
-            <div className="fade-in-up-delay-2" style={{ textAlign: "center" }}>
-              <ul style={{ listStyleType: "none", padding: 0 }}>
-                <li>
-                  {" "}
-                  ✅ Custom web applications using React.js and PHP / Laravel
-                </li>
-                <li>✅ Responsive web design using HTML5, CSS3 & JavaScript</li>
-                <li>✅ Frontend development using React.js</li>
-                <li>✅ Backend APIs with PHP / Laravel</li>
-                <li>✅ Full-stack website development</li>
-                <li>✅ Database design with MySQL or Firebase</li>
-                <li>✅ Bug fixing, optimization & maintenance</li>
-                <li>✅ Desktop apps using Electron.js</li>
-              </ul>
-            </div>
+            performance-driven.
+          </p>
+          <div className="fade-in-up-delay-2" style={{ textAlign: "center" }}>
+            <ul style={{ listStyleType: "none", padding: 0 }}>
+              <li>
+                {" "}
+                ✅ Custom web applications using React.js and PHP / Laravel
+              </li>
+              <li>✅ Responsive web design using HTML5, CSS3 & JavaScript</li>
+              <li>✅ Frontend development using React.js</li>
+              <li>✅ Backend APIs with PHP / Laravel</li>
+              <li>✅ Full-stack website development</li>
+              <li>✅ Database design with MySQL or Firebase</li>
+              <li>✅ Bug fixing, optimization & maintenance</li>
+              <li>✅ Desktop apps using Electron.js</li>
+            </ul>
+          </div>
+          <p className="fade-in-up-delay-2" style={{ textAlign: "center" }}>
             I love turning ideas into working products and delivering results
             that clients can rely on. Let’s work together to bring your project
             to life—on time and with clean, maintainable code.
