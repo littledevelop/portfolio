@@ -21,8 +21,8 @@ const Contact = () => {
     setStatus('sending');
 
     try {
-      // const response = await axios.post('https://your-vercel-domain.vercel.app/api/contact', formData, {
-      const response = await axios.post('http://localhost:3001/api/contact', formData, {
+      // const response = await axios.post('http://localhost:3001/api/contact', formData, {
+      const response = await axios.post('https://portfolio-git-main-littledevelops-projects.vercel.app/', formData, {
       headers: {
         'Content-Type': 'application/json',
       },
