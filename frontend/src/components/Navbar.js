@@ -7,11 +7,6 @@ import { LaptopOutlined, UploadOutlined, FileOutlined, MenuOutlined } from '@ant
 
 const Navbar = () => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
-
-  const handleMenuClick = (e) => {
-    console.log('Menu item clicked:', e.key);
-  };
-
   const menuItems = [
     { key: '1', label: 'Home', icon: <FaHtml5 /> },
     { key: '2', label: 'About', icon: <LaptopOutlined /> },
@@ -60,7 +55,6 @@ const Navbar = () => {
             mode="horizontal"
             defaultSelectedKeys={['1']}
             style={{ lineHeight: '64px' }}
-            onClick={handleMenuClick}
             items={menuItems.map((item) => ({
               key: item.key,
               icon: item.icon,
@@ -81,7 +75,6 @@ const Navbar = () => {
           theme="light"
           mode="vertical"
           defaultSelectedKeys={['1']}
-          onClick={handleMenuClick}
           items={menuItems.map((item) => ({
             key: item.key,
             icon: item.icon,

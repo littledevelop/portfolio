@@ -6,19 +6,20 @@ const blogPosts = [
     id: 'react-hooks',
     title: 'Understanding React Hooks',
     content: 'React Hooks are functions that let you use state and other React features in functional components. They simplify state management and side effects in React applications.',
-    image: 'https://via.placeholder.com/300x200.png?text=React+Hooks',
+    image: 'images/reacthook.jpeg',
   },
   {
     id: 'ant-design',
     title: 'Getting Started with Ant Design',
     content: 'Ant Design is a popular React UI library that provides a set of high-quality components for building beautiful and responsive user interfaces.',
-    image: 'https://via.placeholder.com/300x200.png?text=Ant+Design',
+    image: 'images/antdesign.jpeg',
+   
   },
   {
     id: 'javascript-es6',
     title: 'Mastering JavaScript ES6+ Features',
     content: 'JavaScript ES6 introduced several new features like arrow functions, destructuring, template literals, and more, which make coding more efficient and readable.',
-    image: 'https://via.placeholder.com/300x200.png?text=JavaScript+ES6',
+    image: 'images/javascriptes6.jpeg',
   },
 ];
 
@@ -31,11 +32,20 @@ const BlogPost = () => {
   }
 
   return (
-    <div className="blog-post">
-      <h1>{post.title}</h1>
-      <img src={post.image} alt={post.title} style={{ width: '100%', maxHeight: '400px', objectFit: 'cover' }} />
-      <p>{post.content}</p>
+    <div className="blog-page">
+      {/* You can add a back button or navigation here */}
+      <button onClick={() => window.history.back()} style={{ marginBottom: '20px' }}>
+        Back to Blog
+      </button>
+      {/* Display the blog post content */}
+      <h1 className="blog-post-title">{post.title}</h1>
+      <p className="blog-post-content">{post.content}</p>
+      {/* Display the image if it exists */}
+      {post.image && <img src={`${process.env.PUBLIC_URL}/${post.image}`} alt={post.title} style={{ width: '100%', maxHeight: '100%', objectFit: 'cover' }} />}
+      {/* You can also add more content or styling here */}
+      <p className="blog-post-content">{post.content}</p>
     </div>
+    
   );
 };
 
