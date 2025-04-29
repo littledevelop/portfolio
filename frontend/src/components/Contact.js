@@ -22,8 +22,7 @@ const Contact = () => {
 
     try {
       // const response = await axios.post('http://localhost:3001/api/contact', formData, {
-      // const response = await axios.post('https://portfolio-gray-nine-54.vercel.app/api/content', formData, {
-      const response = await axios.post('https://your-vercel-domain.vercel.app/api/contact', formData, {
+      const response = await axios.post('https://portfolio-gray-nine-54.vercel.app/api/content', formData, {
       headers: {
         'Content-Type': 'application/json',
       },
