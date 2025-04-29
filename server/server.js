@@ -11,6 +11,16 @@ app.use(express.json());
 // Serve static files from the React app
 app.use(express.static(path.join(__dirname, '../frontend/build')));
 // API Routes
+
+app.use(cors({
+  origin: 'https://portfolio-gray-nine-54.vercel.app', // Replace with your frontend URL
+  methods: ['POST'],
+  allowedHeaders: ['Content-Type'],
+}));
+
+app.options('*', cors());
+
+// Contact form endpoint
 app.post('/api/contact', async (req, res) => {
   try {
     const { name, email, message } = req.body;
