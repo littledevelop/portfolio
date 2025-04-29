@@ -14,9 +14,7 @@ app.use(express.static(path.join(__dirname, '../frontend/build')));
 
 app.use(cors({
   origin: 'https://portfolio-gray-nine-54.vercel.app', // Replace with your frontend URL
-  methods: ['POST'],
-  allowedHeaders: ['Content-Type'],
-}));
+  }));
 
 app.options('*', cors());
 
