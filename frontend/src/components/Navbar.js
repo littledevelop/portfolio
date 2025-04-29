@@ -4,9 +4,9 @@ import '../common.css';
 import { Menu, Row, Col, Drawer, Button } from 'antd';
 import { FaHtml5 } from 'react-icons/fa';
 import { LaptopOutlined, UploadOutlined, FileOutlined, MenuOutlined } from '@ant-design/icons';
-
 const Navbar = () => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+
   const menuItems = [
     { key: '1', label: 'Home', icon: <FaHtml5 /> },
     { key: '2', label: 'About', icon: <LaptopOutlined /> },
@@ -28,13 +28,13 @@ const Navbar = () => {
       <Row
         justify="space-between"
         align="middle"
-        style={{ padding: '0 20px', backgroundColor: '#001529' }}
-      >
+          >
         {/* Brand Section */}
         <Col xs={18} sm={18} md={12} lg={12}>
           <div className="navbar-brand" style={{ color: 'white', fontSize: '24px' }}>
-            <Link to="/home" style={{ color: 'white', textDecoration: 'none' }}>
-              LATA CHAPADIA
+            <Link to="/home" style={{ color: 'white', textDecoration: 'none' , fontWeight: 'bold', fontSize: '24px',fontFamily:'Arial, sans-serif'}}>  
+              <img src="/images/logo.png" alt="Logo" className="logo-image" />
+             {/* &nbsp; Lata Chapadia */}
             </Link>
           </div>
         </Col>

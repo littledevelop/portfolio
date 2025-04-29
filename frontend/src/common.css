@@ -563,17 +563,19 @@ li {
 /* Navbar Styles */
 
 .navbar {
-    position: fixed;
+    position: relative;
     top: 0;
     width: 100%;
     z-index: 1000;
-    background-color: #001529;
+    background-color: lightgray;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .navbar-brand {
     font-size: 1.5rem;
     font-weight: bold;
+    display: flex;
+    align-items: center; /* Vertically center the logo */
 }
 
 .navbar-brand a {
@@ -581,6 +583,12 @@ li {
     text-decoration: none;
 }
 
+@media (max-width: 768px) {
+    .logo-image {
+      height: 40px; /* Smaller size for mobile screens */
+    }
+  }
+  
 .nav-links {
     display: flex;
     list-style: none;
@@ -767,8 +775,18 @@ li {
     text-decoration: underline;
 }
 
-
+@media (min-width: 768px) {
+    :where(.css-dev-only-do-not-override-tjsggz).ant-col-md-12 {
+        --ant-display: block;
+        display: block;
+        display: grid
+;
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
 /* Responsive Design */
+
 
 @media (max-width: 768px) {
     .navbar {
@@ -787,4 +805,19 @@ li {
     .projects-grid {
         grid-template-columns: 1fr;
     }
+    /* .logo-image {
+        height: 50px;
+        width: auto;
+        display: inline-block;
+      } */
+}
+
+
+/* filepath: c:\xampp\htdocs\projects\portfolio\frontend\src\common.css */
+.logo-image {
+  height: 150px; /* Adjust the height as needed */
+  width: auto; /* Maintain aspect ratio */
+  display: inline-block;
+
+  
 }
